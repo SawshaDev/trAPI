@@ -1,2 +1,6 @@
 # trAPI
-kill yourself 
+An free and open source NSFW API!
+
+
+
+Links:
