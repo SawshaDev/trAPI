@@ -6,9 +6,9 @@ import os
 
 
 app = Flask(__name__)
-reddit = praw.Reddit(client_id='pua14mlzkyv5_ZfQ2WmqpQ',
-                     client_secret='T5loHbaVD7m-RNMpFf0z24iOJsInwg',
-                     user_agent='Oxygen',
+reddit = praw.Reddit(client_id='client_id here',
+                     client_secret='client_secret herre',
+                     user_agent='just put the app name',
                      check_for_async= False)
 
 
