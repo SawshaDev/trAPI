@@ -24,7 +24,7 @@ def favicon():
 def home():
     
 
-    nsfw_submission = reddit.subreddit('femboysandhentai').hot()
+    nsfw_submission = reddit.subreddit('putsubreddithere').hot()
     post_to_pick = random.randint(1,30)
     for i in range(0, post_to_pick):
             submission = next(x for x in nsfw_submission if not x.stickied)
