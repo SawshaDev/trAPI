@@ -9,7 +9,7 @@ from werkzeug.middleware.proxy_fix import ProxyFix
 
 
 app = Flask(__name__)
-app.wsgi_app = ProxyFix(app.wsgi_app)
+app.wsgi_app= ProxyFix(app.wsgi_app)
 reddit = praw.Reddit(client_id='pua14mlzkyv5_ZfQ2WmqpQ',
                      client_secret='T5loHbaVD7m-RNMpFf0z24iOJsInwg',
                      user_agent='Oxygen',
@@ -88,6 +88,16 @@ def femboy():
     return {'status': 200, 'title':title,'link': submission.url}
 
 
+@app.route("/api/v1/nsfw")
+def nsfw():
+    nsfw_submission = reddit.subreddit('nsfw').hot()
+    post_to_pick = random.randint(1,30)
+    for i in range(0, post_to_pick):
+        submission = next(x for x in nsfw_submission if not x.stickied)
+
+    title = submission.title
+
+    return {'status':200, 'title':title, 'link':submission.url}
 
 
 
